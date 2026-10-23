@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" width="100%" height="auto" role="img" aria-labelledby="matrix-title matrix-desc">
+  <title id="matrix-title">矩陣線性變換：單位正方形變成平行四邊形</title>
+  <desc id="matrix-desc">左側顯示原始向量空間與單位正方形，中間顯示矩陣 A，右側顯示矩陣作用後的向量與平行四邊形，底部示範線性與矩陣乘法順序。</desc>
+  <defs>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#236b68"/></marker>
+    <marker id="arrow-gold" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#b67b35"/></marker>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#dce7ee" stroke-width="1"/></pattern>
+  </defs>
+  <rect width="1200" height="760" fill="#ffffff"/>
+  <g font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" fill="#1e2937">
+    <text x="48" y="42" font-size="25" font-weight="700" fill="#123b63">矩陣把向量送到新的位置</text>
+    <text x="48" y="70" font-size="16" fill="#657286">同一個矩陣會同時改變向量與由向量張成的形狀。</text>
+
+    <!-- original coordinate space -->
+    <g transform="translate(45,95)">
+      <text x="150" y="0" text-anchor="middle" font-size="20" font-weight="700" fill="#123b63">原始向量空間</text>
+      <rect x="0" y="30" width="300" height="270" fill="url(#grid)" stroke="#d8e0e8"/>
+      <line x1="25" y1="255" x2="280" y2="255" stroke="#8493a6" stroke-width="2" marker-end="url(#arrow-blue)"/>
+      <line x1="25" y1="255" x2="25" y2="55" stroke="#8493a6" stroke-width="2" marker-end="url(#arrow-blue)"/>
+      <polygon points="25,255 85,255 85,195 25,195" fill="#236b68" fill-opacity=".14" stroke="#236b68" stroke-width="3"/>
+      <line x1="25" y1="255" x2="85" y2="255" stroke="#236b68" stroke-width="5" marker-end="url(#arrow-blue)"/>
+      <line x1="25" y1="255" x2="25" y2="195" stroke="#b67b35" stroke-width="5" marker-end="url(#arrow-gold)"/>
+      <text x="88" y="270" font-size="18" fill="#236b68">u=(1,0)</text>
+      <text x="34" y="188" font-size="18" fill="#8b5a1e">v=(0,1)</text>
+      <text x="88" y="188" font-size="16" fill="#236b68">u+v=(1,1)</text>
+      <text x="268" y="278" font-size="16">x</text><text x="10" y="58" font-size="16">y</text>
+      <text x="26" y="324" font-size="16" fill="#657286">單位正方形</text>
+    </g>
+
+    <!-- matrix -->
+    <g transform="translate(470,125)">
+      <text x="100" y="0" text-anchor="middle" font-size="20" font-weight="700" fill="#123b63">矩陣作用</text>
+      <text x="100" y="42" text-anchor="middle" font-size="24" font-weight="700">A =</text>
+      <path d="M42 60h10M42 60v112M42 172h10M158 60h-10M158 60v112M158 172h-10" fill="none" stroke="#123b63" stroke-width="3"/>
+      <text x="76" y="108" font-size="25">2</text><text x="125" y="108" font-size="25">1</text>
+      <text x="76" y="150" font-size="25">0</text><text x="125" y="150" font-size="25">1</text>
+      <text x="100" y="215" text-anchor="middle" font-size="17" fill="#657286">A 乘上每一個向量</text>
+      <path d="M0 250h200" stroke="#b67b35" stroke-width="3" marker-end="url(#arrow-gold)"/>
+      <text x="100" y="282" text-anchor="middle" font-size="17" fill="#8b5a1e">同一條規則</text>
+    </g>
+
+    <!-- transformed space -->
+    <g transform="translate(820,95)">
+      <text x="150" y="0" text-anchor="middle" font-size="20" font-weight="700" fill="#123b63">作用後的向量空間</text>
+      <rect x="0" y="30" width="300" height="270" fill="url(#grid)" stroke="#d8e0e8"/>
+      <line x1="25" y1="255" x2="280" y2="255" stroke="#8493a6" stroke-width="2" marker-end="url(#arrow-blue)"/>
+      <line x1="25" y1="255" x2="25" y2="55" stroke="#8493a6" stroke-width="2" marker-end="url(#arrow-blue)"/>
+      <polygon points="25,255 145,255 205,195 85,195" fill="#b67b35" fill-opacity=".18" stroke="#b67b35" stroke-width="3"/>
+      <line x1="25" y1="255" x2="145" y2="255" stroke="#236b68" stroke-width="5" marker-end="url(#arrow-blue)"/>
+      <line x1="25" y1="255" x2="85" y2="195" stroke="#b67b35" stroke-width="5" marker-end="url(#arrow-gold)"/>
+      <text x="146" y="270" font-size="18" fill="#236b68">Au=(2,0)</text>
+      <text x="88" y="188" font-size="18" fill="#8b5a1e">Av=(1,1)</text>
+      <text x="153" y="188" font-size="16" fill="#8b5a1e">Au+Av=(3,1)</text>
+      <text x="268" y="278" font-size="16">x</text><text x="10" y="58" font-size="16">y</text>
+      <text x="78" y="324" font-size="16" fill="#657286">平行四邊形</text>
+    </g>
+
+    <!-- linearity check -->
+    <g transform="translate(55,455)">
+      <rect width="500" height="245" rx="10" fill="#f7fbfd" stroke="#c9d8e4"/>
+      <text x="22" y="34" font-size="20" font-weight="700" fill="#123b63">線性：先相加再作用，結果相同</text>
+      <line x1="55" y1="102" x2="145" y2="102" stroke="#236b68" stroke-width="5" marker-end="url(#arrow-blue)"/>
+      <line x1="55" y1="102" x2="105" y2="55" stroke="#b67b35" stroke-width="5" marker-end="url(#arrow-gold)"/>
+      <text x="45" y="145" font-size="18">u+v</text><text x="165" y="108" font-size="18">A</text>
+      <line x1="210" y1="102" x2="310" y2="102" stroke="#b67b35" stroke-width="4" marker-end="url(#arrow-gold)"/>
+      <text x="225" y="145" font-size="18">A(u+v)</text>
+      <text x="170" y="190" font-size="22" font-weight="700" fill="#236b68">A(u+v)=Au+Av</text>
+      <text x="22" y="224" font-size="15" fill="#657286">矩陣作用保留向量相加的結構。</text>
+    </g>
+
+    <!-- order flow -->
+    <g transform="translate(590,455)">
+      <rect width="555" height="245" rx="10" fill="#fffef5" stroke="#e2d7ae"/>
+      <text x="22" y="34" font-size="20" font-weight="700" fill="#123b63">順序通常不能交換</text>
+      <text x="25" y="75" font-size="18">x</text><path d="M45 68h55" stroke="#236b68" stroke-width="3" marker-end="url(#arrow-blue)"/><text x="68" y="55" font-size="16">B</text><path d="M125 68h55" stroke="#236b68" stroke-width="3" marker-end="url(#arrow-blue)"/><text x="150" y="55" font-size="16">A</text><text x="195" y="75" font-size="18">ABx</text>
+      <text x="25" y="130" font-size="18">x</text><path d="M45 123h55" stroke="#b67b35" stroke-width="3" marker-end="url(#arrow-gold)"/><text x="68" y="110" font-size="16">A</text><path d="M125 123h55" stroke="#b67b35" stroke-width="3" marker-end="url(#arrow-gold)"/><text x="150" y="110" font-size="16">B</text><text x="195" y="130" font-size="18">BAx</text>
+      <text x="290" y="103" font-size="24" font-weight="700" fill="#b42318">AB ≠ BA</text>
+      <text x="290" y="140" font-size="15" fill="#657286">column-vector convention：</text>
+      <text x="290" y="164" font-size="15" fill="#657286">右側矩陣先作用。</text>
+      <text x="22" y="205" font-size="15" fill="#657286">先做 B 再做 A 得到 ABx；先做 A 再做 B 得到 BAx。</text>
+      <text x="22" y="226" font-size="15" fill="#657286">兩條流程不同，矩陣乘法的方向不能只靠直覺交換。</text>
+    </g>
+  </g>
+</svg>
