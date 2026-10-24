@@ -41,7 +41,11 @@
       return { mode, year, question: normalizeQuestion(year, p.get('question')), group: p.get('group') || null };
     }
     if (mode === 'curriculum') {
-      const lesson = Math.max(0, Math.min((root.lessons || []).length - 1, (Number(p.get('lesson')) || 1) - 1));
+      // `lessons` is declared with `const` in script.js, so it is a global
+      // lexical binding rather than a window property. Read that binding
+      // first so curriculum deep links are not clamped back to L01.
+      const curriculumLessons = typeof lessons !== 'undefined' ? lessons : (root.lessons || []);
+      const lesson = Math.max(0, Math.min(curriculumLessons.length - 1, (Number(p.get('lesson')) || 1) - 1));
       const units = typeof root.buildLessonUnits === 'function' ? root.buildLessonUnits(lesson) : [];
       const unit = Math.max(0, Math.min(Math.max(units.length - 1, 0), (Number(p.get('unit')) || 1) - 1));
       return { mode, lesson, unit };
