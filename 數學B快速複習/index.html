@@ -7,9 +7,20 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <aside class="course-sidebar" aria-label="課程索引">
+    <div class="course-sidebar-heading">課程索引</div>
+    <div id="lessonSidebar"></div>
+  </aside>
   <header class="top"><div class="wrap"><p class="eyebrow">依 111～115 學測數學 B 高分班課綱與 20 課 MD 教材整理</p><h1>學測數學 B｜20 堂課綱教學</h1><p>每堂課先理解，再背公式；最後用歷屆題確認是否真的會用。</p><p class="source-link"><a href="../學測數學B_20課_MD.zip">下載 20 課 MD 原始教材</a></p></div></header>
-  <nav class="lesson-nav"><div class="wrap" id="lessonTabs" aria-label="課程頁籤"></div></nav>
-  <main class="wrap"><p class="supplement-entry"><a href="?mode=supplementary">數學 B 補充觀念：名詞、情境與模型</a></p><div id="lessonApp"></div><p class="back-link"><a href="入口.html">回到數學 B 快速複習入口</a>　<a href="../Math-B-Review/index.html">開啟 111～115 歷屆題詳解</a></p></main>
+  <div class="desktop-toolbar">
+    <nav class="mode-nav" id="modeNav" aria-label="主要功能"><a data-app-mode="curriculum" href="#mode=curriculum">課綱複習</a><a data-app-mode="exam" href="#mode=exam&amp;year=115&amp;question=1">歷屆試題</a><a data-app-mode="supplementary" href="#mode=supplementary">補充教材</a></nav>
+    <div class="toolbar-actions">
+      <p class="supplement-entry"><a href="#mode=supplementary">數學 B 補充觀念：名詞、情境與模型</a></p>
+      <div id="themeSlot" aria-label="顯示設定"></div>
+    </div>
+    <nav class="lesson-nav"><div class="wrap" id="lessonTabs" aria-label="課程頁籤"></div></nav>
+  </div>
+  <main class="wrap"><div id="lessonApp"></div></main>
   <footer class="footer"><div class="wrap">內容依專案內課綱與 111～115 官方試題主題整理；公式與例題請搭配課本、老師講義及官方試卷核對。</div></footer>
   <script src="question-bank-115.js"></script>
   <script src="question-bank.js"></script>
@@ -27,6 +38,8 @@
   <script src="lesson-formulas.js"></script>
   <script src="math-b-supplement.js"></script>
   <script src="lesson-single-view.js"></script>
+  <script src="../Math-B-Review/review-presentation-metadata.js"></script>
+  <script src="unified-exam.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

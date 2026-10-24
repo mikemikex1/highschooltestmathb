@@ -63,3 +63,141 @@ body.dark input[type=search],body.dark .supplement-tools input{background:#251f1
 body.dark button:focus-visible,body.dark a:focus-visible,body.dark input:focus-visible,body.dark summary:focus-visible{outline-color:#d58a42;box-shadow:0 0 0 2px #f6efe5}
 @media(max-width:700px){.wrap{width:min(100% - 24px,1180px)}.top{padding:16px 0}.top h1{font-size:1.35rem}.lesson-nav .wrap{gap:6px}.lesson-nav #lessonTabs{padding-bottom:4px}.tab{min-width:42px;padding:8px 12px}.theme-toggle{padding:8px 10px;font-size:.86rem}.grid{grid-template-columns:1fr}.card,.lesson-head,.single-unit-card,.practice-card,.question,.formula-card,.supplement-card,.supp-text-card,.real-card,.visual-module{padding:14px;border-radius:14px}.lesson-view-tabs,.single-unit-tabs,.supplement-nav{overflow-x:auto;flex-wrap:nowrap}.lesson-view-tab,.single-unit-tab{white-space:nowrap}.formula,.step,.math-frac,.math-root{max-width:100%;overflow-x:auto}.visual-module .beginner-visual,.matrix-visual-frame{max-width:100%;overflow-x:auto}}
 @media(max-width:430px){body{font-size:.96rem}.wrap{width:calc(100% - 20px)}.top h1{font-size:1.18rem}.source-link{font-size:.82rem}.theme-toggle{font-size:.8rem;padding-inline:9px}.card h3{font-size:1.03rem}.practice-card button,.question button,.quiz-actions button{min-height:44px}.supplement-tools{display:grid;gap:8px}}
+
+/* Phase 8 family parity: geometry follows the English/Chinese lesson shells;
+   Math-specific cards, visuals and rendering remain owned by the Math B app. */
+html{scroll-behavior:smooth}
+body{overflow-x:hidden;line-height:1.8}
+.wrap{width:min(1180px,calc(100% - 28px));max-width:none}
+.top{padding:0;background:linear-gradient(135deg,#fffdf8 0%,#fff6dc 100%);border-bottom:1px solid var(--pudding-line)}
+.top>.wrap{max-width:1280px;padding:42px 28px 30px}
+.top h1{margin:0;font-size:clamp(2rem,4vw,3.1rem);letter-spacing:.02em}
+.top p{max-width:820px}
+.top p:nth-of-type(2){margin:8px 0;color:var(--pudding-muted);font-size:1.08rem}
+.top .source-link{margin:14px 0 0;font-size:.94rem}
+.source-link a{font-weight:800;text-decoration:none}
+.source-link a:hover{text-decoration:underline}
+.lesson-nav{top:0;box-shadow:0 4px 16px rgba(112,67,31,.08)}
+.lesson-nav>.wrap{max-width:1280px;padding:10px 28px;gap:14px}
+.lesson-nav #lessonTabs{gap:8px;padding:0;scrollbar-width:thin}
+.tab,.theme-toggle{min-height:44px;border-radius:8px;padding:8px 14px;font-size:.95rem}
+.tab{min-width:44px}
+.theme-toggle{flex:0 0 auto;white-space:nowrap}
+.lesson-head{margin:24px 0 16px;padding:22px;border-left-width:5px;border-radius:16px}
+.lesson-head h2{font-size:1.6rem}
+.lesson-head p{margin:.5rem 0 0}
+.grid{gap:16px}
+.card,.rich-lesson .overview,.rich-lesson .panel,.single-unit-card,.practice-card,.question,.formula-card,.supplement-card,.supp-text-card,.real-card,.visual-module{border-radius:16px;padding:16px}
+.card h3{font-size:1.05rem}
+.single-local-nav,.single-unit-tabs,.lesson-view-tabs,.supplement-nav{margin:0 0 16px;padding:8px;border-radius:12px;gap:8px;overflow-x:auto;scrollbar-width:thin}
+.single-unit-tab,.lesson-view-tab,.supplement-nav button{min-height:44px;border-radius:8px;padding:8px 14px;white-space:nowrap}
+.single-unit{min-width:0}
+.single-unit-card{padding:22px}
+.single-prev-next{gap:14px;margin:18px 0 32px;padding:14px 0}
+.single-prev-next button{min-height:44px;border-radius:8px;padding:8px 16px}
+.supplement-tools input,#supplementSearch,input[type=search]{min-height:44px;border-radius:8px}
+details>summary{min-height:44px;padding:8px 0;cursor:pointer}
+button,a,input,summary{touch-action:manipulation}
+.practice-card button,.question button,.quiz-actions button{min-height:44px;border-radius:8px}
+.footer{margin-top:36px}
+body.dark .top{background:#1d1814}
+body.dark .lesson-nav{box-shadow:0 4px 16px rgba(0,0,0,.28)}
+body.dark .top p:nth-of-type(2){color:#d8c9b8}
+
+@media(max-width:850px){
+  .top>.wrap{padding:32px 18px 26px}
+  .lesson-nav>.wrap{padding:10px 14px;gap:8px}
+  .lesson-nav #lessonTabs{overflow-x:auto;overflow-y:hidden}
+  .single-local-nav,.single-unit-tabs,.lesson-view-tabs,.supplement-nav{max-width:100%;}
+}
+@media(max-width:700px){
+  .wrap{width:calc(100% - 24px)}
+  .top>.wrap{padding:28px 12px 22px}
+  .top h1{font-size:2rem}
+  .top p:nth-of-type(2){font-size:1rem}
+  .lesson-head{margin-top:16px;padding:16px;border-radius:14px}
+  .lesson-head h2{font-size:1.4rem}
+  .card,.rich-lesson .overview,.rich-lesson .panel,.single-unit-card,.practice-card,.question,.formula-card,.supplement-card,.supp-text-card,.real-card,.visual-module{padding:14px;border-radius:14px}
+  .single-unit-card{padding:16px}
+  .single-prev-next{position:sticky;bottom:0;margin-left:-12px;margin-right:-12px;padding:10px 12px;background:rgba(255,253,248,.97);border-top:1px solid var(--pudding-line);z-index:2}
+  body.dark .single-prev-next{background:rgba(29,24,20,.97);border-top-color:#49392b}
+}
+@media(max-width:430px){
+  .wrap{width:calc(100% - 20px)}
+  .top>.wrap{padding:24px 10px 18px}
+  .top h1{font-size:1.65rem}
+  .top p:nth-of-type(2){font-size:.96rem}
+  .lesson-nav>.wrap{padding-inline:10px}
+  .tab{padding-inline:12px}
+  .theme-toggle{font-size:.86rem;padding-inline:10px}
+  .lesson-head h2{font-size:1.28rem}
+}
+
+/* Unified app / official exam mode. The existing pudding tokens remain the source of truth. */
+.mode-nav{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:0 0 10px;padding:4px 0}
+.mode-nav a{display:inline-flex;align-items:center;min-height:42px;padding:7px 13px;border:1px solid var(--pudding-line);border-radius:8px;background:var(--pudding-paper);color:var(--pudding-caramel-dark);font-weight:800;text-decoration:none}
+.mode-nav a:hover{border-color:var(--pudding-caramel-soft);background:var(--pudding-yellow)}
+.mode-nav a.active{background:var(--pudding-caramel);border-color:var(--pudding-caramel);color:#fffdf8}
+.exam-sidebar{display:grid;gap:12px}.exam-sidebar-years{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}.exam-year,.exam-question-link{display:flex;justify-content:space-between;gap:7px;align-items:center;padding:8px 9px;border:1px solid transparent;border-radius:8px;color:var(--pudding-caramel-dark);text-decoration:none}.exam-year:hover,.exam-question-link:hover{background:#fff3d4;border-color:var(--pudding-caramel-soft)}.exam-year.active,.exam-question-link.active{background:var(--pudding-yellow);border-color:var(--pudding-caramel-soft);font-weight:800}.exam-sidebar-questions{display:grid;gap:3px;max-height:56vh;overflow:auto}.exam-question-link{font-size:.9rem}.exam-question-link.answered span:last-child{color:var(--beginner-teal);font-weight:800}.sidebar-mode-label{margin:0;color:var(--pudding-caramel-dark);font-weight:800}
+.exam-question-card{max-width:980px;margin:0 auto 28px;padding:22px;border:1px solid var(--pudding-line);border-radius:16px;background:var(--pudding-paper);box-shadow:var(--pudding-shadow)}.exam-question-meta{display:flex;gap:8px;flex-wrap:wrap;color:var(--pudding-muted);font-size:.9rem;font-weight:800}.exam-question-meta span{padding:3px 8px;border-radius:999px;background:var(--pudding-yellow)}.exam-question-card h2{margin:12px 0;color:var(--pudding-caramel-dark);font-size:1.35rem}.exam-summary{color:var(--pudding-muted)}.exam-media{max-width:100%;overflow:auto;margin:14px 0;padding:10px;border:1px solid var(--pudding-line);border-radius:12px;background:#fffdf8}.exam-media img{display:block;max-width:100%;height:auto;margin:auto}.exam-options{display:grid;gap:8px;margin:18px 0;padding:0;border:0}.exam-options legend{font-weight:800;color:var(--pudding-caramel-dark)}.exam-option{display:flex;align-items:flex-start;gap:10px;min-height:46px;padding:10px 12px;border:1px solid var(--pudding-line);border-radius:10px;cursor:pointer}.exam-option:hover{border-color:var(--pudding-caramel-soft);background:#fff8e8}.exam-option input{margin-top:5px;accent-color:var(--pudding-caramel)}.exam-input-label{display:block;margin:12px 0 5px;font-weight:800;color:var(--pudding-caramel-dark)}.exam-fill,.exam-response{width:100%;min-height:46px;padding:9px 11px;border:1px solid var(--pudding-line);border-radius:8px;background:var(--pudding-paper);color:var(--pudding-caramel-dark)}.exam-response{min-height:150px;resize:vertical}.exam-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.exam-actions button{min-height:46px;padding:8px 16px;border:1px solid var(--pudding-caramel);border-radius:8px;background:var(--pudding-caramel);color:#fffdf8;font-weight:800;cursor:pointer}.exam-actions button.secondary{background:transparent;color:var(--pudding-caramel-dark);border-color:var(--pudding-line)}.exam-result{margin-top:20px;padding:16px;border:1px solid var(--pudding-caramel-soft);border-left:5px solid var(--pudding-caramel);border-radius:12px;background:#fff8e8;color:var(--pudding-caramel-dark)}.exam-result h3,.exam-result h4{color:var(--pudding-caramel-dark)}.official-basis{color:var(--pudding-muted);font-size:.9rem}
+body.dark .mode-nav a,body.dark .exam-question-card,body.dark .exam-option,body.dark .exam-fill,body.dark .exam-response{background:#251f1a;border-color:#49392b;color:#f6efe5}body.dark .mode-nav a{color:#f6efe5}body.dark .mode-nav a:hover,body.dark .exam-option:hover{background:#2d261f;border-color:#d58a42}body.dark .mode-nav a.active{background:#d58a42;border-color:#d58a42;color:#171310}body.dark .exam-year,body.dark .exam-question-link,body.dark .sidebar-mode-label{color:#f6efe5}body.dark .exam-year.active,body.dark .exam-question-link.active{background:#d58a42;border-color:#d58a42;color:#171310}body.dark .exam-question-card h2,body.dark .exam-options legend,body.dark .exam-input-label{color:#f6efe5}body.dark .exam-question-meta span{background:#302820;color:#f6efe5}body.dark .exam-summary,body.dark .official-basis{color:#d8c9b8}body.dark .exam-media{background:#f7f1e7;border-color:#49392b}body.dark .exam-result{background:#302820;border-color:#d58a42;color:#f6efe5}body.dark .exam-result h3,body.dark .exam-result h4{color:#f6efe5}
+@media(max-width:850px){.mode-nav{overflow-x:auto;flex-wrap:nowrap}.mode-nav a{white-space:nowrap}.exam-sidebar-years{grid-template-columns:repeat(5,minmax(92px,1fr));overflow-x:auto}.exam-sidebar-questions{display:flex;overflow-x:auto;max-height:none}.exam-question-link{min-width:90px;flex-direction:column;align-items:flex-start}.exam-question-card{padding:16px}}
+
+/* Desktop shell parity: course index on the left, lesson content on the right. */
+body{display:grid;grid-template-columns:250px minmax(0,1fr);grid-template-areas:"header header" "sidebar toolbar" "sidebar main" "footer footer";min-width:0}
+.top{grid-area:header}.course-sidebar{grid-area:sidebar;position:sticky;top:18px;align-self:start;max-height:calc(100vh - 36px);overflow:auto;margin:24px 0 24px 14px;padding:14px;background:var(--pudding-paper);border:1px solid var(--pudding-line);border-radius:16px;box-shadow:var(--pudding-shadow);min-width:0}
+.course-sidebar-heading{margin:2px 6px 10px;color:var(--pudding-caramel-dark);font-weight:800;font-size:1rem}
+#lessonSidebar{display:grid;gap:4px}
+.sidebar-lesson{display:flex;align-items:flex-start;gap:9px;width:100%;min-height:44px;padding:9px 8px;border:1px solid transparent;border-radius:9px;background:transparent;color:var(--pudding-caramel-dark);text-align:left;cursor:pointer;line-height:1.35}
+.sidebar-lesson:hover{background:#fff3d4;border-color:var(--pudding-caramel-soft)}
+.sidebar-lesson.active{background:var(--pudding-yellow);border-color:var(--pudding-caramel-soft);border-left:4px solid var(--pudding-caramel);padding-left:5px;font-weight:800}
+.sidebar-lesson-number{flex:0 0 34px;font-variant-numeric:tabular-nums;color:var(--pudding-caramel);font-weight:800}
+.sidebar-lesson-title{min-width:0;overflow-wrap:anywhere}
+.desktop-toolbar{grid-area:toolbar;min-width:0;padding:18px 28px 0}
+.supplement-entry{margin:0 0 10px;padding:0;font-size:.92rem}
+.supplement-entry a{font-weight:800;text-decoration:none}
+.lesson-nav{position:sticky;top:0;width:100%;border-bottom:1px solid var(--pudding-line);box-shadow:0 4px 16px rgba(112,67,31,.08)}
+.lesson-nav>.wrap{width:100%;max-width:none;padding:10px 28px}
+.lesson-nav #lessonTabs{min-width:0}
+body>main{grid-area:main;width:auto;max-width:none;margin:0;padding:0 28px 24px}
+body>main #lessonApp{max-width:980px;margin:0 auto}
+body>footer{grid-area:footer;width:100%}
+body.dark .course-sidebar{background:#251f1a;border-color:#49392b;box-shadow:0 12px 30px rgba(0,0,0,.28)}
+body.dark .course-sidebar-heading,body.dark .sidebar-lesson{color:#f6efe5}
+body.dark .sidebar-lesson:hover{background:#2d261f;border-color:#d58a42}
+body.dark .sidebar-lesson.active{background:#d58a42;border-color:#d58a42;color:#171310}
+body.dark .sidebar-lesson-number{color:inherit}
+body.dark .lesson-nav{box-shadow:0 4px 16px rgba(0,0,0,.28)}
+@media(max-width:850px){
+  body{display:block}
+  .course-sidebar{position:static;max-height:none;overflow:hidden;margin:14px 12px 0;padding:10px}
+  .course-sidebar-heading{margin:2px 4px 7px}
+  #lessonSidebar{display:flex;gap:7px;overflow-x:auto;padding-bottom:3px;scrollbar-width:thin}
+  .sidebar-lesson{flex:0 0 min(190px,48vw);border-color:var(--pudding-line);background:var(--pudding-paper)}
+  .sidebar-lesson.active{border-left-width:1px;padding-left:8px}
+  .desktop-toolbar{padding:0}
+  .lesson-nav{position:static;box-shadow:none;border-bottom:0}
+  .lesson-nav>.wrap{padding:8px 14px}
+  .lesson-nav .tab{display:none}
+  .lesson-nav #lessonTabs{justify-content:flex-end}
+  body>main{padding:0 12px 20px}
+  body>main #lessonApp{max-width:none}
+}
+@media(max-width:430px){
+  .course-sidebar{margin-inline:10px}
+  .sidebar-lesson{flex-basis:170px}
+  .lesson-nav>.wrap{padding-inline:10px}
+  body>main{padding-inline:10px}
+}
+
+/* Toolbar hotfix: the sidebar is the only lesson navigation on desktop and mobile.
+   The existing lesson buttons remain populated for mobile fallback/routing, but the
+   duplicate top row is not part of the visible shell. */
+.toolbar-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;margin-bottom:10px}
+.toolbar-actions .supplement-entry{margin:0}
+.toolbar-actions #themeSlot{display:flex;align-items:center;justify-content:flex-end;min-width:0}
+.desktop-toolbar>.lesson-nav{display:none}
+@media(max-width:850px){
+  .toolbar-actions{padding:0 12px;margin-bottom:8px}
+  .toolbar-actions .supplement-entry{font-size:.88rem}
+}
